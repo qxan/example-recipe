@@ -1,38 +1,50 @@
-import React from "react";
-import meal from "../assets/meal.svg";
+import React, { useState } from "react";
+import LoginForm from "./LoginForm";
+import About from './About'
+
 
 const Login = () => {
+  const adminUser = {
+    email: "admin@admin.com",
+    password: "admin123",
+  };
+
+  const [user, setUser] = useState({ name: "", email: "" });
+  const [error, setError] = useState("");
+
+  const Login = (details) => {
+    console.log(details);
+
+    if (
+      details.email == adminUser.email &&
+      details.password == adminUser.password
+    ) {
+      console.log("Logged in!");
+      setUser({
+        name: details.name,
+        email: details.email,
+      });
+    } else {
+      console.log("Details do not match");
+      setError("Details do not match");
+    }
+  };
+
+  const Logout = () => {
+    setUser({ name: "", email: "" });
+  };
+
   return (
-    <div className="flex flex-col  items-center text-center text-black h-screen ">
-      <div className="mt-10 flex flex-col gap-10 font-bold text-4xl">
-        <div className="baslik">
-          <h2 className="">Delicious</h2>
-        </div>
-        <div className="altbaslık">
-          <h1 className="text-cyan-600">
-            Login to See All of the Delicious Recipes
-          </h1>
-        </div>
+    <div className="flex flex-col justify-center items-center h-screen">
+      <div className="mb-10 text-center">
+        <h1 className="text-4xl">Delicious</h1>
+        <h1 className="text-4xl">Login to See All of the Delicious Recipes</h1>
       </div>
-      <div className="mt-10 w-[30rem] h-[30rem] flex justify-center items-center">
-        <div className="w-[15rem]">
-          <img src={meal} alt="login-img" />
-          <form className="mt-5">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="placeholder-black"
-            />
-            <p className="w-[15rem] h-[0.2rem] bg-red-500 rounded"></p>
-            <input
-              type="text"
-              placeholder="Your Password"
-              className="placeholder-black mt-2 border-none"
-            />
-            <p className="w-[15rem] h-[0.2rem] bg-red-500 rounded"></p>
-          </form>
-        </div>
-      </div>
+      {user.email != "" ? (
+        <About />
+      ) : (
+        <LoginForm Login={Login} error={error} />
+      )}
     </div>
   );
 };
