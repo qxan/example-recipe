@@ -1,9 +1,11 @@
 import React from 'react'
 import coding from '../assets/coding.svg'
+import Navbar from '../components/navbar/Navbar'
 
 const About = () => {
   return (
     <div className='genediv'>
+      <Navbar />
       <div className='flex justify-center items-center mt-10'>
         <img className='w-[25rem]' src={coding} alt="coding" />
       </div>

@@ -9,7 +9,7 @@ const Login = () => {
       <div className="  ">
         <form
           className="flex flex-col items-center justify-center w-screen h-screen"
-          onSubmit={() => navigate("home")}
+          onSubmit={() => navigate("Home")}
         >
           <h1 className="text-4xl mb-10">Delicious</h1>
           <h1 className="text-4xl text-center mb-10">Login to See All of the Delicious Recipes</h1>
