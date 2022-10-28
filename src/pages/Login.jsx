@@ -32,7 +32,7 @@ const Login = () => {
             className="text-black  w-[15rem] h-[2rem] text-center mb-2 rounded-xl"
           />
           <p className="bg-red-700 w-[15rem] h-[.3rem] rounded-lg mb-10"></p>
-          <button className="bg-red-700 rounded-xl w-[7rem] h-[1.7rem] hover:bg-blue-500 hover:text-white">
+          <button className="bg-red-700 rounded-xl w-[7rem] h-[1.7rem] hover:bg-cyan-400 ">
             LOGIN
           </button>
         </form>
