@@ -1,8 +1,12 @@
 import React from 'react'
+import coding from '../assets/coding.svg'
 
 const About = () => {
   return (
     <div className='genediv'>
+      <div>
+        <img src={coding} alt="coding" />
+      </div>
         <div className='baslik'>
             <h1>ABOUT THIS PAGE</h1>
         </div>
