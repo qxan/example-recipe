@@ -15,7 +15,7 @@ const Navbar = () => {
           <NavLink className="hover:text-red-700" to="/About">
             About
           </NavLink>
-          <a href="https://github.com/qxan/react-reacipe-app" className="hover:text-red-700">Github</a>
+          <a href="https://github.com/qxan/react-reacipe-app" target="_blank" className="hover:text-red-700">Github</a>
           <NavLink className="hover:text-red-700" to="/Login">
             Logout
           </NavLink>

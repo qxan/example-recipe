@@ -156,3 +156,65 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+
+
+import React, { useState } from "react";
+import reactlogo from "../assets/reactt.png";
+import { useNavigate } from "react-router-dom";
+
+const Login = (props) => {
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState("");
+
+  props.funcNav(false);
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/home");
+  };
+
+  return (
+    <div className="flex items-center justify-center">
+      <div className="flex flex-col items-center justify-center h-screen w-screen" onSubmit={handleSubmit}>
+        <h1 className="text-4xl mb-10">Delicious</h1>
+        <h1 className="text-4xl text-center mb-10">
+          Login to See All of the Delicious Recipes
+        </h1>
+        <img
+          src={reactlogo}
+          alt="meal-logo"
+          className="w-[15rem] h-[13rem] mb-5  "
+        />
+        <input
+          type="text"
+          value={username}
+          placeholder="Enter Your Name"
+          required
+          className="text-black  w-[15rem] h-[2rem] text-center mb-2 rounded-xl"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <p className="bg-red-700 w-[15rem] h-[.3rem] rounded-lg mb-5"></p>
+        <input
+          type="password"
+          value={password}
+          placeholder="Enter Your Passwords"
+          required
+          className="text-black  w-[15rem] h-[2rem] text-center mb-2 rounded-xl"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <p className="bg-red-700 w-[15rem] h-[.3rem] rounded-lg mb-10"></p>
+        <input className="bg-red-700 rounded-xl w-[7rem] h-[1.7rem] hover:bg-cyan-400 ">
+          LOGIN
+        </input>
+      </div>
+    </div>
+  );
+};
+
+export default Login;

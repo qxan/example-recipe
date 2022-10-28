@@ -1,20 +1,22 @@
-import React from "react";
-import logo from "../assets/reactt.png";
-import {useNavigate} from "react-router";
+
+import reactlogo from "../assets/reactt.png";
+import { useNavigate } from "react-router";
 
 const Login = () => {
   const navigate = useNavigate();
   return (
-    <div className="logcontainer flex  items-center justify-center  ">
+    <div className="flex items-center justify-center">
       <div className="  ">
         <form
-          className="flex flex-col items-center justify-center w-screen h-screen"
-          onSubmit={() => navigate("Home")}
+          className="flex flex-col items-center justify-center h-screen w-screen"
+          onSubmit={() => navigate("/Home")}
         >
           <h1 className="text-4xl mb-10">Delicious</h1>
-          <h1 className="text-4xl text-center mb-10">Login to See All of the Delicious Recipes</h1>
+          <h1 className="text-4xl text-center mb-10">
+            Login to See All of the Delicious Recipes
+          </h1>
           <img
-            src={logo}
+            src={reactlogo}
             alt="meal-logo"
             className="w-[15rem] h-[13rem] mb-5  "
           />

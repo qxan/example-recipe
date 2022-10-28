@@ -6,20 +6,18 @@ import Navbar from "../components/navbar/Navbar";
 import NotFound from "../pages/NotFound";
 import Details from "../pages/Details";
 import Home from "../pages/Home";
-const AppRouter = () => {
-  const [nav, setNav] = useState(false);
 
+const AppRouter = () => {
   return (
     <div>
       <BrowserRouter>
-        {nav && <Navbar />}
         <Routes>
-          <Route path="/" element={<Login funcNav={setNav} />} />
+          <Route path="/" element={<Login/>} />
           <Route path="/Login" element={<Login />} />
-          <Route path="/About" element={<About funcNav={setNav} />} />
-          <Route path="/home" element={<Home funcNav={setNav} />} />
-          <Route path="/Details" element={<Details funcNav={setNav} />} />
-          <Route path="*" element={<NotFound funcNav={setNav} />} />
+          <Route path="/About" element={<About/>} />
+          <Route path="/Home" element={<Home/>} />
+          <Route path="/Details" element={<Details/>} />
+          <Route path="*" element={<NotFound/>} />
         </Routes>
       </BrowserRouter>
     </div>
